@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="initial-scale=1.0, user-scalable=no" name="viewport">
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <title>Dots example</title>
+</head>
+<body>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Raleway');
+  html, body, *{
+    color: white;
+    font-family: 'Raleway';
+    background: black;
+  }
+  body, html {
+    padding: 0;
+    margin: 0;
+    background: black; }
+  #anim {
+    display: none; }
+  
+  #dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black; }
+  
+  .info {
+    position: fixed;
+    z-index: 100;
+    top: 10%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.33);
+    padding: 20px 30px;
+    opacity: 0;
+    pointer-events: none; }
+    .info p {
+      background: transparent;
+      margin: 0;
+      display: inline-block;
+      vertical-align: middle; }
+    .info img {
+      display: inline-block;
+      vertical-align: middle;
+      background: transparent;
+      width: 30px;
+      height: auto;
+      margin: 0 7px; }
+  
+  .info-mobile{
+    display: none;
+    padding:10px 15px;
+    width: 100%; }
+  .info-mobile p{
+    text-align: center;
+    display: block;
+  }
+  @media screen and (max-width: 1024px){
+    .info-desktop{
+      display: none;
+    }
+    .info-mobile{
+      display: block;
+    }
+  }
+</style>
+
+<img id='anim' src='anim40.jpg'>
+
+<div class='info info-desktop'>
+<p>Press</p>
+<img src='arrow_left.png'>
+<p>and</p>
+<img src='arrow_right.png'>
+<p>to change states.</p>
+</div>
+
+<div class='info info-mobile'>
+<p>Swipe to change states.</p>
+</div>
+
+<script src='global.js' type="text/javascript"></script>
+<script src='vendor/TweenMax.min.js'></script>
+<script src='vendor/three.min.js'></script>
+<script src='vendor/CanvasRenderer.js'></script>
+<script src='vendor/Projector.js'></script>
+<script src='vendor/Detector.js'></script>
+<script src='vendor/hammer.min.js'></script>
+</body>
+</html>
